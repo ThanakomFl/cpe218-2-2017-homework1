@@ -94,17 +94,17 @@ public class Homework1 extends JPanel
 	}
 
 	private void createNodes(DefaultMutableTreeNode top ,Node n) {
-		if(n.right!=null)
-		{
-			DefaultMutableTreeNode Right=new DefaultMutableTreeNode(n.right);
-			top.add(Right);
-			createNodes(Right,n.right);
-		}
 		if(n.left!=null)
 		{
-			DefaultMutableTreeNode left=new DefaultMutableTreeNode(n.left);
+			DefaultMutableTreeNode Right=new DefaultMutableTreeNode(n.left);
+			top.add(Right);
+			createNodes(Right,n.left);
+		}
+		if(n.right!=null)
+		{
+			DefaultMutableTreeNode left=new DefaultMutableTreeNode(n.right);
 			top.add(left);
-			createNodes(left,n.left);
+			createNodes(left,n.right);
 		}
 	}
 
